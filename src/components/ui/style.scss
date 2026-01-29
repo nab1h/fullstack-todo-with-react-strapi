@@ -1,0 +1,14 @@
+@mixin focus-style($color) {
+  &:focus {
+    outline: 2px solid $color;
+  }
+}
+
+.input {
+  @include focus-style(blue);
+
+  &.error {
+    border: 2px solid red;
+    @include focus-style(red);
+  }
+}

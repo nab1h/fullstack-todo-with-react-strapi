@@ -28,7 +28,7 @@ const LoginPage = () => {
           <form>
             <div className="flex flex-col gap-4">{renderFormlogin}</div>
             <Button
-              className="w-full"
+              className="w-full py-2"
               children="Register"
               color="blue"
               type="submit"
@@ -37,7 +37,7 @@ const LoginPage = () => {
           <p className=" text-gray-600 text-center">
             Don't you have an account?
             <span className="text-blue-500 hover:text-gray-500 duration-300">
-              <Link to="/"> Register</Link>
+              <Link to="/register"> Register</Link>
             </span>
           </p>
         </div>

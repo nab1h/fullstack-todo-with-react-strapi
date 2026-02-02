@@ -16,7 +16,9 @@ const close= ()=>setIsOpen(false);
 // ** rernder
   return (
     <>
-    <Navbar />
+    <div className="flex justify-center">
+      <div className="container mx-auto px-24 ">
+      <Navbar />
       <Button children="nabih" color="blue" type="submit"/>
       <br />
       <br />
@@ -24,6 +26,8 @@ const close= ()=>setIsOpen(false);
       <br />
       <br />
       <Modal isOpen={isOpen} onClose={close} title='nabih' description="jdfjsdfjkl" />
+    </div>
+    </div>
     </>
   );
 }

@@ -11,8 +11,8 @@ const Button = ({ children, color,className,type, ...rest }: Iprops) => {
   return (
     <button
       type={type}
-      className={`text-white rounded-sm px-2 py-1 mt-4 cursor-pointer input ${className? className : ""}`}
-      style={{ backgroundColor: color,marginTop:30 ,padding:10}}
+      className={`text-white font-medium rounded-sm cursor-pointer input ${className? className : ""}`}
+      style={{ backgroundColor: color,paddingLeft:20,paddingRight:20}}
       {...rest}
 
     >

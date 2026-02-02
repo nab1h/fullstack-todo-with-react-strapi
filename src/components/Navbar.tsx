@@ -1,22 +1,22 @@
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 const Navbar = () => {
   return (
     <>
-      <nav className="flex items-center justify-between w-full h-10 py-2 mb-2 bg-amber-500">
+      <nav className="flex items-center justify-between w-full h-20 px-2 py-6 mb-10">
         <div>
           <ul>
             <li>
-              <Link to='/' className="hover:text-blue-500 duration-400 font-bold">Home</Link>
+              <NavLink to='/' className="hover:text-blue-500 duration-400 font-bold border border-black-700 rounded-sm py-2 px-4 m-3">Home</NavLink>
             </li>
           </ul>
         </div>
         <div className="flex">
           <ul className="flex gap-4">
             <li className="hove:color-blue">
-              <Link to='/' className="hover:text-blue-500 duration-400 font-bold">Login</Link>
+              <NavLink to='/login' className="hover:text-blue-500 duration-400 font-bold border border-black-700 rounded-sm py-2 px-4 m-3">Login</NavLink>
             </li>
             <li>
-              <Link to='/' className="hover:text-blue-500 duration-400 font-bold">Register</Link>
+              <NavLink to='/register' className="hover:text-blue-500 duration-400 font-bold border border-black-700 rounded-sm py-2 px-4 m-3">Register</NavLink>
             </li>
           </ul>
         </div>

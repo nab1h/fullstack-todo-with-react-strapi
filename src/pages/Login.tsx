@@ -10,18 +10,24 @@ import toast from "react-hot-toast";
 import axiosInstance from "../config/axios.config";
 import type { AxiosError } from "axios";
 import type IErrorHandlerForm from "../interfaces";
+import { useDispatch } from "react-redux";
+import { logIn } from "../features/counter/counterSlice";
 
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm<ILogin>();
   const onSubmit: SubmitHandler<ILogin> = async (data) => {
     toast.loading("Loading...");
     try {
-      const { status } = await axiosInstance.post('/auth/local', data);
-        if (status === 200 || status === 201) {
+      const res = await axiosInstance.post('/auth/local', data);
+      const status = res.status;
+      if (status === 200 || status === 201) {
+          localStorage.setItem("userToken", res.data.jwt)
           toast.dismiss();
           toast.success('done sign in successfly.');
           reset();
+          dispatch(logIn());
         }
     } catch (error) {
       const errorObj = error as AxiosError<IErrorHandlerForm>;

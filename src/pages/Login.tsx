@@ -4,7 +4,7 @@ import { loginInputForm } from "../data/index";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useForm , type SubmitHandler } from "react-hook-form";
 import type { ILogin } from "../interfaces";
 import toast from "react-hot-toast";
 import axiosInstance from "../config/axios.config";
@@ -13,7 +13,7 @@ import type IErrorHandlerForm from "../interfaces";
 
 
 const LoginPage = () => {
-  const { register, handleSubmit } = useForm<ILogin>();
+  const { register, handleSubmit, reset } = useForm<ILogin>();
   const onSubmit: SubmitHandler<ILogin> = async (data) => {
     toast.loading("Loading...");
     try {
@@ -21,6 +21,7 @@ const LoginPage = () => {
         if (status === 200 || status === 201) {
           toast.dismiss();
           toast.success('done sign in successfly.');
+          reset();
         }
     } catch (error) {
       const errorObj = error as AxiosError<IErrorHandlerForm>;

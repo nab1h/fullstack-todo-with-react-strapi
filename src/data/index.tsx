@@ -28,9 +28,9 @@ export const registerInputForm:IRegisterInputForm[] = [
     },
   },
 ];
-export const loginInputForm:IRegisterInputForm[] = [
+export const loginInputForm: IRegisterInputForm[] = [
   {
-    name: "email",
+    name: "identifier",
     placeholder: "Email",
     type: "email",
     validation: {
